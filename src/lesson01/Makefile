@@ -1,6 +1,17 @@
 ARMGNU ?= aarch64-linux-gnu
+BAUD_RATE ?= 115200
 
-COPS = -Wall -nostdlib -nostartfiles -ffreestanding -Iinclude -mgeneral-regs-only
+# ifdef UART
+# SYSTEM_CLOCK_FREQ = 48000000
+# else
+# SYSTEM_CLOCK_FREQ = 250000000
+# endif
+
+DEFINES = -DBAUD_RATE=$(BAUD_RATE)
+# ifdef UART
+# DEFINES += -DUART=$(UART)
+# endif
+COPS = -Wall -nostdlib -nostartfiles -ffreestanding -Iinclude -mgeneral-regs-only $(DEFINES)
 ASMOPS = -Iinclude 
 
 BUILD_DIR = build
