@@ -5,6 +5,8 @@ src/*/build
 **/*.swp
 **/*.img
 **/*.elf
+.cache/
+*.json
 
 # gnu global files
 GPATH

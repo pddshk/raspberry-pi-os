@@ -1,6 +1,9 @@
 #ifndef _UART_H
 #define _UART_H
 
-#define SYSTEM_CLOCK_FREQ 48000000
+void uart_init(void);
+char uart_recv(void);
+void uart_send(char c);
+void uart_send_string(char *str);
 
 #endif
